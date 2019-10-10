@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">KotlinTest</string>
+    <string name="enter_username">Enter Username</string>
+    <string name="delete_user">Delete User</string>
+    <string name="retrieve_user">Retrieve User</string>
+    <string name="create_edit_user">Create/Edit User</string>
+</resources>
