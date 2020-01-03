@@ -25,8 +25,4 @@ class FirestoreRepository {
         var documentRef = firestoreDB.collection("users").document(user.name!!)
         return documentRef.delete()
     }
-
-    //testing9
-
-
 }
