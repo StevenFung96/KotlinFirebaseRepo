@@ -17,8 +17,7 @@ class FirestoreRepository {
 
     fun getUserItem(): CollectionReference {
 
-        var collectionRef = firestoreDB.collection("users")
-        return collectionRef
+        return firestoreDB.collection("users")
     }
 
     fun deleteUserItem(user: User): Task<Void> {

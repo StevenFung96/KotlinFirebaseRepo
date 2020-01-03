@@ -4,6 +4,8 @@ apply plugin: 'kotlin-android'
 
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'com.google.gms.google-services'
+// Add the Fabric plugin.
+apply plugin: 'io.fabric'
 
 android {
     dataBinding {
@@ -26,6 +28,25 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+    flavorDimensions "mode"
+    productFlavors {
+        dev {
+            versionCode 1
+            versionName "1.0.0"
+            resValue "string", "app_name", "Kotlin Test DEV"
+            resValue "string", "ver_name", "DEV"
+            dimension "mode"
+        }
+
+        sta {
+            versionCode 1
+            versionName "1.0.0"
+            applicationIdSuffix ".stg"
+            resValue "string", "app_name", "Kotlin Test STG"
+            resValue "string", "ver_name", "UAT"
+            dimension "mode"
+        }
+    }
 }
 
 dependencies {
@@ -38,6 +59,8 @@ dependencies {
     implementation 'com.google.firebase:firebase-auth:19.1.0'
     implementation 'com.google.firebase:firebase-firestore:21.1.1'
     implementation 'com.google.firebase:firebase-analytics:17.2.0'
+    // Add the Firebase Crashlytics dependency.
+    implementation 'com.crashlytics.sdk.android:crashlytics:2.10.1'
 
     implementation "android.arch.lifecycle:extensions:1.1.1"
     implementation 'androidx.lifecycle:lifecycle-extensions:2.1.0'
